@@ -1,0 +1,25 @@
+{
+  "name": "luxury-beauty-clinic",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w server && npm run build -w client",
+    "build:client": "npm run build -w client",
+    "typecheck": "npm run typecheck -w server && npm run typecheck -w client",
+    "lint": "npm run lint -w client",
+    "prisma:generate": "npm run prisma:generate -w server",
+    "prisma:migrate": "npm run prisma:migrate -w server",
+    "seed": "npm run seed -w server"
+  },
+  "overrides": {
+    "shell-quote": "^1.8.4"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.3"
+  }
+}

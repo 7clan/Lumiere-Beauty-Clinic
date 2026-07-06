@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #2f2a27;
+  background: #fffaf3;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(255, 250, 243, 0.94), rgba(248, 242, 236, 0.98)),
+    #fffaf3;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.focus-ring {
+  @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-rosewood focus-visible:ring-offset-2 focus-visible:ring-offset-ivory;
+}
+
+.field {
+  @apply w-full rounded-lg border border-taupe/25 bg-white/90 px-4 py-3 text-sm text-ink shadow-sm outline-none transition placeholder:text-taupe focus:border-rosewood focus:ring-2 focus:ring-rosewood/15;
+}
+
+.label {
+  @apply text-sm font-semibold text-ink;
+}
+
+.error {
+  @apply mt-1 text-sm font-medium text-rosewood;
+}
