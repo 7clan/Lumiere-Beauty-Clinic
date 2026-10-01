@@ -96,9 +96,8 @@ GitHub Actions now performs:
 1. dependency installation
 2. Prisma client generation
 3. TypeScript type checking
-4. frontend linting
-5. automated server validation tests
-6. full server + client build
+4. automated server validation tests
+5. full server + client build
 
 The initial automated tests cover password rules, email normalization, login validation, appointment input contracts, and service-update constraints. They are intentionally a starting layer rather than a claim of complete integration coverage.
 
@@ -157,7 +156,6 @@ API: `http://localhost:4000`
 
 ```bash
 npm run typecheck
-npm run lint
 npm test
 npm run build
 ```
