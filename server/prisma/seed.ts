@@ -25,16 +25,21 @@ async function main() {
     });
   }
 
-  await prisma.user.upsert({
-    where: { email: "admin@lumiereclinic.com" },
-    update: { role: UserRole.ADMIN },
-    create: {
-      email: "admin@lumiereclinic.com",
-      fullName: "Clinic Admin",
-      passwordHash: await bcrypt.hash("AdminPass123!", 12),
-      role: UserRole.ADMIN
-    }
-  });
+  const adminPassword = process.env.SEED_ADMIN_PASSWORD;
+  if (adminPassword) {
+    await prisma.user.upsert({
+      where: { email: "admin@lumiereclinic.com" },
+      update: { role: UserRole.ADMIN },
+      create: {
+        email: "admin@lumiereclinic.com",
+        fullName: "Clinic Admin",
+        passwordHash: await bcrypt.hash(adminPassword, 12),
+        role: UserRole.ADMIN
+      }
+    });
+  } else {
+    console.warn("SEED_ADMIN_PASSWORD is not set; skipping development admin account.");
+  }
 }
 
 main()
