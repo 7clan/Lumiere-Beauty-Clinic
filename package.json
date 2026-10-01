@@ -14,7 +14,8 @@
     "lint": "npm run lint -w client",
     "prisma:generate": "npm run prisma:generate -w server",
     "prisma:migrate": "npm run prisma:migrate -w server",
-    "seed": "npm run seed -w server"
+    "seed": "npm run seed -w server",
+    "test": "npm run test -w server"
   },
   "overrides": {
     "shell-quote": "^1.8.4"
